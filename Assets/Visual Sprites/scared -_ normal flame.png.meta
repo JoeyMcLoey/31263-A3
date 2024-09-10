@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 6b18d8708cb21ca41a1b593310ba9d07
+guid: 7ad42825ad791884e87ebb486bd66e67
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1011036318175255990
-    second: red ghost (1)_0
+      213: -4029564101353450955
+    second: scared -_ normal flame_0
   - first:
-      213: -6900417186632276772
-    second: red ghost (1)_1
+      213: 2976056038076899353
+    second: scared -_ normal flame_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: red ghost (1)_0
+      name: scared -_ normal flame_0
       rect:
         serializedVersion: 2
         x: 2
-        y: 31
-        width: 29
-        height: 33
+        y: 32
+        width: 28
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,20 +117,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a42252843d318f1f0800000000000000
-      internalID: -1011036318175255990
+      spriteID: 5325923accc1418c0800000000000000
+      internalID: -4029564101353450955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: red ghost (1)_1
+      name: scared -_ normal flame_1
       rect:
         serializedVersion: 2
         x: 2
         y: 0
-        width: 29
-        height: 32
+        width: 28
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,8 +138,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd468c4f02bcc30a0800000000000000
-      internalID: -6900417186632276772
+      spriteID: 910ea35e2331d4920800000000000000
+      internalID: 2976056038076899353
       vertices: []
       indices: 
       edges: []

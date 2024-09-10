@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: df9e62dfb581e894789ab6ec77a4a968
+guid: fdd233bfd731f12438de9856384b7bcc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7351414469246633781
-    second: red ghost scared_0
+      213: -3000045115971463851
+    second: knight swinging (1)_0
   - first:
-      213: -964595894377567676
-    second: red ghost scared_1
+      213: 4255358703906184802
+    second: knight swinging (1)_1
+  - first:
+      213: -6244855958619254648
+    second: knight swinging (1)_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: red ghost scared_0
+      name: knight swinging (1)_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 31
-        width: 29
-        height: 33
+        x: 0
+        y: 32
+        width: 26
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,20 +120,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 537cc14a288750660800000000000000
-      internalID: 7351414469246633781
+      spriteID: 5551068acd2bd56d0800000000000000
+      internalID: -3000045115971463851
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: red ghost scared_1
+      name: knight swinging (1)_1
       rect:
         serializedVersion: 2
-        x: 2
-        y: 0
-        width: 29
-        height: 32
+        x: 32
+        y: 32
+        width: 30
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,8 +141,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 44a23db05211d92f0800000000000000
-      internalID: -964595894377567676
+      spriteID: 26ed13202321e0b30800000000000000
+      internalID: 4255358703906184802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight swinging (1)_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8809401a790d559a0800000000000000
+      internalID: -6244855958619254648
       vertices: []
       indices: 
       edges: []

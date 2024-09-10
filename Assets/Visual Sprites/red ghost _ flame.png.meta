@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 974638a918150044797dfeeea701b2b9
+guid: a820a98c40733514b8a8775a576b53c2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5147268220788548860
-    second: dead ghost_0
+      213: 6502041902103868064
+    second: red ghost _ flame_0
+  - first:
+      213: -4469105224142662634
+    second: red ghost _ flame_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dead ghost_0
+      name: red ghost _ flame_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 3
-        width: 21
-        height: 28
+        x: 1
+        y: 32
+        width: 29
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +117,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 40bdd3813da3198b0800000000000000
-      internalID: -5147268220788548860
+      spriteID: 0a23b9129a4eb3a50800000000000000
+      internalID: 6502041902103868064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red ghost _ flame_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 614522b1a7c8af1c0800000000000000
+      internalID: -4469105224142662634
       vertices: []
       indices: 
       edges: []

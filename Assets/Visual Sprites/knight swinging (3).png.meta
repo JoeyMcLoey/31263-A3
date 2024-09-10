@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 0b6411da01969d34a91c68c931c1ab10
+guid: 9e359c77e6c8dbd4a93b3c47fae781b8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4005945885774998518
-    second: coin _ pellet_0
+      213: 3091708308330385454
+    second: knight swinging (3)_0
+  - first:
+      213: -8182747113288579131
+    second: knight swinging (3)_1
+  - first:
+      213: 4244537355533691071
+    second: knight swinging (3)_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: coin _ pellet_0
+      name: knight swinging (3)_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 7
-        width: 19
-        height: 19
+        x: 7
+        y: 33
+        width: 24
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +120,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a0491f8f0750868c0800000000000000
-      internalID: -4005945885774998518
+      spriteID: e20182b6354f7ea20800000000000000
+      internalID: 3091708308330385454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight swinging (3)_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 33
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c7c491cada017e80800000000000000
+      internalID: -8182747113288579131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight swinging (3)_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb826708c30a7ea30800000000000000
+      internalID: 4244537355533691071
       vertices: []
       indices: 
       edges: []
@@ -123,7 +171,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e3a18279ef5c5e44e88a470da1cd70d2
+    spriteID: daa333ce0ba0b9949b661926368d9205
     internalID: 0
     vertices: []
     indices: 
@@ -131,7 +179,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      coin _ pellet_0: -4005945885774998518
+      knight swinging (3)_0: 3091708308330385454
+      knight swinging (3)_1: -8182747113288579131
+      knight swinging (3)_2: 4244537355533691071
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 7ad42825ad791884e87ebb486bd66e67
+guid: 296a1a15d1b72c4488693cff9156563b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4029564101353450955
-    second: scared -_ normal flame_0
-  - first:
-      213: 2976056038076899353
-    second: scared -_ normal flame_1
+      213: -8546047484285623600
+    second: power pellet _ potion_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,43 +100,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: scared -_ normal flame_0
+      name: power pellet _ potion_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 33
-        width: 26
-        height: 28
+        x: 7
+        y: 3
+        width: 17
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5325923accc1418c0800000000000000
-      internalID: -4029564101353450955
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: scared -_ normal flame_1
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 1
-        width: 26
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 910ea35e2331d4920800000000000000
-      internalID: 2976056038076899353
+      spriteID: 0d2e8898717566980800000000000000
+      internalID: -8546047484285623600
       vertices: []
       indices: 
       edges: []
@@ -147,7 +123,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6b7c12fff1c0fb44097f7e2c8315cd1a
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -155,8 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      scared -_ normal flame_0: -4029564101353450955
-      scared -_ normal flame_1: 2976056038076899353
+      power pellet _ potion_0: -8546047484285623600
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

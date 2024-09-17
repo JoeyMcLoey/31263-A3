@@ -111,7 +111,7 @@ TextureImporter:
         width: 27
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -119,27 +119,6 @@ TextureImporter:
       bones: []
       spriteID: 0a23b9129a4eb3a50800000000000000
       internalID: 6502041902103868064
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: red ghost _ flame_1
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 1
-        width: 27
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 614522b1a7c8af1c0800000000000000
-      internalID: -4469105224142662634
       vertices: []
       indices: 
       edges: []

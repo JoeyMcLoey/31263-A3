@@ -114,10 +114,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1
         y: 34
-        width: 24
+        width: 29
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -133,12 +133,12 @@ TextureImporter:
       name: knight swinging downward_1
       rect:
         serializedVersion: 2
-        x: 38
+        x: 33
         y: 33
-        width: 19
+        width: 29
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -154,12 +154,12 @@ TextureImporter:
       name: knight swinging downward_2
       rect:
         serializedVersion: 2
-        x: 7
+        x: 1
         y: 2
-        width: 23
+        width: 29
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,12 +175,12 @@ TextureImporter:
       name: knight swinging downward_3
       rect:
         serializedVersion: 2
-        x: 39
+        x: 33
         y: 1
-        width: 18
+        width: 29
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

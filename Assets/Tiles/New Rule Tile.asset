@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: New Rule Tile
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 6491643567286738802, guid: b06b5eed7788fb94bb16ec1c42f76c31, type: 3}
+  m_DefaultSprite: {fileID: 6134486632272683370, guid: 284e6f17874e07145af98a59577503c7, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 5
     m_Sprites:
-    - {fileID: 6491643567286738802, guid: b06b5eed7788fb94bb16ec1c42f76c31, type: 3}
+    - {fileID: 6134486632272683370, guid: 284e6f17874e07145af98a59577503c7, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1

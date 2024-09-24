@@ -11,6 +11,7 @@ public class PacMovement : MonoBehaviour
     private Vector3[] pathPoints = new Vector3[4];
 
     private int currentTarget = 0;
+    private Animator animator;
 
     void Start()
     { 
@@ -20,6 +21,8 @@ public class PacMovement : MonoBehaviour
         pathPoints[3] = new Vector3(1, -5, 0);
 
         movementAudioSource.clip = movementClip;
+        movementAudioSource.loop = true;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -32,10 +35,17 @@ public class PacMovement : MonoBehaviour
             currentTarget = (currentTarget + 1) % pathPoints.Length; 
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, pathPoints[currentTarget], speed * Time.deltaTime);
+        Vector3 moveDirection = Vector3.MoveTowards(transform.position, pathPoints[currentTarget], speed * Time.deltaTime);
+        transform.position = moveDirection;
+
+        Vector3 direction = (pathPoints[currentTarget] - transform.position).normalized;
+        animator.SetFloat("MoveX", direction.x);
+        animator.SetFloat("MoveY", direction.y);
+        animator.SetBool("isMoving", true);
 
         if (!movementAudioSource.isPlaying && speed > 0f){
             movementAudioSource.Play();
         }
+
     }
 }

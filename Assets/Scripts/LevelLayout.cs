@@ -5,7 +5,6 @@ using UnityEngine;
 public class LevelLayout : MonoBehaviour
 {
     public GameObject[] tiles;
-    public float tileSize = 1f;
     GameObject parentObject;
     int[,] levelMap =
     {

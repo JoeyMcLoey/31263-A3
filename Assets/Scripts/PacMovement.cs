@@ -11,10 +11,10 @@ public class PacMovement : MonoBehaviour
 
     void Start()
     { 
-        pathPoints[0] = new Vector3(3, -3, 0);
-        pathPoints[1] = new Vector3(3, -6, 0);
-        pathPoints[2] = new Vector3(6, -6, 0);
-        pathPoints[3] = new Vector3(6, -3, 0);
+        pathPoints[0] = new Vector3(1, -1, 0);
+        pathPoints[1] = new Vector3(6, -1, 0);
+        pathPoints[2] = new Vector3(6, -5, 0);
+        pathPoints[3] = new Vector3(1, -5, 0);
     }
 
     void Update()

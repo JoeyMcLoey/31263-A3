@@ -5,9 +5,10 @@ using UnityEngine;
 public class LevelLayout : MonoBehaviour
 {
     public GameObject[] tiles;
-    public int tileSize = 16;
+    public float tileSize = 1f;
+    GameObject parentObject;
     int[,] levelMap =
-        {
+    {
         {1,2,2,2,2,2,2,2,2,2,2,2,2,7},
         {2,5,5,5,5,5,5,5,5,5,5,5,5,4},
         {2,5,3,4,4,3,5,3,4,4,4,3,5,4},
@@ -23,7 +24,7 @@ public class LevelLayout : MonoBehaviour
         {0,0,0,0,0,2,5,4,4,0,3,4,4,0},
         {2,2,2,2,2,1,5,3,3,0,4,0,0,0},
         {0,0,0,0,0,0,5,0,0,0,4,0,0,0},
-        };
+    };
 
     // Start is called before the first frame update
     void Start()
@@ -31,40 +32,37 @@ public class LevelLayout : MonoBehaviour
         ProduceLevel();
     }
 
-    void ProduceLevel(){
-        for (int y = 0; y < levelMap.GetLength(0); y++){
-            for (int x = 0; x < levelMap.GetLength(1); x++){
+    void ProduceLevel() {
+        parentObject = new GameObject("LevelParent"); 
+
+        for (int y = 0; y < levelMap.GetLength(0); y++) {
+            for (int x = 0; x < levelMap.GetLength(1); x++) {
                 int i = levelMap[y, x];
-                if (i != 0){
-                    Vector3 position = new Vector3(x * tileSize, -y * tileSize, 0);
-                    Instantiate(tiles[i], position, Quaternion.identity);
+                if (i != 0) {
+                    Vector3 position = new Vector3(x * 1f, -y * 1f, 0); 
+                    GameObject tile = Instantiate(tiles[i], position, Quaternion.identity);
+                    tile.transform.parent = parentObject.transform;
                 }
             }
         }
-        MirrorLevel();
+
+        GameObject topRight = Instantiate(parentObject, new Vector3(levelMap.GetLength(1) * 1f, 0, 0), Quaternion.identity);
+        topRight.transform.localScale = new Vector3(-1, 1, 1); 
+        topRight.transform.position += new Vector3(levelMap.GetLength(1) * 1f, 0, 0);
+
+        GameObject bottomLeft = Instantiate(parentObject, new Vector3(0, -levelMap.GetLength(0) * 1f, 0), Quaternion.identity);
+        bottomLeft.transform.localScale = new Vector3(1, -1, 1); 
+        bottomLeft.transform.position += new Vector3(0, -(levelMap.GetLength(1)) * 1f, 0);
+
+        GameObject bottomRight = Instantiate(topRight, new Vector3(levelMap.GetLength(1) * 1f, -levelMap.GetLength(0) * 1f, 0), Quaternion.identity);
+        bottomRight.transform.localScale = new Vector3(-1, -1, 1);
+        bottomRight.transform.position += new Vector3(levelMap.GetLength(1) * 1f, -(levelMap.GetLength(1)) * 1f, 0);
     }
 
-    void MirrorLevel(){
-        for (int y = 0; y < levelMap.GetLength(0); y++){
-            for (int x = 0; x < levelMap.GetLength(1); x++){
-                int tileIndex = levelMap[y, x];
-                if (tileIndex != 0){
-                    Vector3 posRight = new Vector3((levelMap.GetLength(1) - 1 - x) * tileSize, -y * tileSize, 0);
-                    Instantiate(tiles[tileIndex], posRight, Quaternion.Euler(0, 180, 0));
-                    
-                    Vector3 posBottom = new Vector3(x * tileSize, -(levelMap.GetLength(0) - 1 - y) * tileSize, 0);
-                    Instantiate(tiles[tileIndex], posBottom, Quaternion.Euler(180, 0, 0));
-                    
-                    Vector3 posBottomRight = new Vector3((levelMap.GetLength(1) - 1 - x) * tileSize, -(levelMap.GetLength(0) - 1 - y) * tileSize, 0);
-                    Instantiate(tiles[tileIndex], posBottomRight, Quaternion.Euler(180, 180, 0));
-                }
-            }
-        }
-    }
+
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         
     }
 }

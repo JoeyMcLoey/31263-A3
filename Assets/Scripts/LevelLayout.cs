@@ -2,6 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/** NOTE
+
+
+I was fiddling around with levelLayout for 100% but im happy to not submit it 
+for the final submission. For 85%, just make sure to untick the LevelLayout
+script component on the LevelLayout gameObject
+
+
+**/
+
 public class LevelLayout : MonoBehaviour
 {
     public GameObject[] tiles;

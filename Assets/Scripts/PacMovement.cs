@@ -10,7 +10,9 @@ public class PacMovement : MonoBehaviour
     public float speed = 2f;
     private Vector3[] pathPoints = new Vector3[4];
 
-    private int currentTarget = 0;
+    private int currTarget = 0;
+    private float moveProgress = 0f;
+    private Vector3 startPos;
     private Animator animator;
 
     void Start()
@@ -20,6 +22,7 @@ public class PacMovement : MonoBehaviour
         pathPoints[2] = new Vector3(1, -5, 0);
         pathPoints[3] = new Vector3(1, -1, 0);
 
+        startPos = transform.position;
         movementAudioSource.clip = movementClip;
         movementAudioSource.loop = true;
         animator = GetComponent<Animator>();
@@ -31,21 +34,23 @@ public class PacMovement : MonoBehaviour
     }
 
     private void MoveAlongPath(){
-        if (Vector3.Distance(transform.position, pathPoints[currentTarget]) < 0.1f){
-            currentTarget = (currentTarget + 1) % pathPoints.Length; 
+        if (moveProgress < 1f){
+            moveProgress += (speed / Vector3.Distance(startPos, pathPoints[currTarget])) * Time.deltaTime;
+            transform.position = Vector3.Lerp(startPos, pathPoints[currTarget], moveProgress);
+
+            Vector3 direction = (pathPoints[currTarget] - transform.position).normalized;
+            animator.SetFloat("MoveX", direction.x);
+            animator.SetFloat("MoveY", direction.y);
+            animator.SetBool("isMoving", true);
+
+            if (!movementAudioSource.isPlaying && speed > 0f){
+                movementAudioSource.Play();
+            }
         }
-
-        Vector3 moveDirection = Vector3.MoveTowards(transform.position, pathPoints[currentTarget], speed * Time.deltaTime);
-        transform.position = moveDirection;
-
-        Vector3 direction = (pathPoints[currentTarget] - transform.position).normalized;
-        animator.SetFloat("MoveX", direction.x);
-        animator.SetFloat("MoveY", direction.y);
-        animator.SetBool("isMoving", true);
-
-        if (!movementAudioSource.isPlaying && speed > 0f){
-            movementAudioSource.Play();
-        }
-
+        else {
+            moveProgress = 0f;
+            startPos = pathPoints[currTarget];
+            currTarget = (currTarget + 1)% pathPoints.Length;
+        }        
     }
 }

@@ -237,7 +237,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48299623}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9b331e80c16c7548ac86fc6ebe9c405, type: 3}
   m_Name: 
@@ -2005,7 +2005,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970737558}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d7fcb3407db24a949a0f89bede1bca9a, type: 2}
   m_CullingMode: 0
@@ -7991,7 +7991,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865955199}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 66280482bdee8424698e7247c724a9e6, type: 2}
   m_CullingMode: 0
@@ -9044,6 +9044,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8042371539941187311, guid: cc5f7b8169a1d9a4e858e3c706e54dec, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9060,6 +9064,10 @@ PrefabInstance:
     - target: {fileID: 5240934577021972000, guid: 6162549a4402008419d56d955de02e4c, type: 3}
       propertyPath: m_Name
       value: Ghost2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5952708251259024640, guid: 6162549a4402008419d56d955de02e4c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810023245154806833, guid: 6162549a4402008419d56d955de02e4c, type: 3}
       propertyPath: m_LocalPosition.x

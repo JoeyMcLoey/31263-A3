@@ -8,8 +8,8 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        PlayMusic(introMusic, false);
-        StartCoroutine(PlayNormalBackgroundMusic());
+        PlayMusic(introMusic, true);
+        // StartCoroutine(PlayNormalBackgroundMusic());
     }
 
     private void PlayMusic(AudioClip clip, bool loop)
@@ -19,10 +19,10 @@ public class AudioManager : MonoBehaviour
         audioSource.Play();
     }
 
-    private System.Collections.IEnumerator PlayNormalBackgroundMusic()
-    {
-        yield return new WaitForSeconds(introMusic.length);
+    // private System.Collections.IEnumerator PlayNormalBackgroundMusic()
+    // {
+    //     yield return new WaitForSeconds(introMusic.length);
 
-        PlayMusic(normalState, true);
-    }
+    //     PlayMusic(normalState, true);
+    // }
 }

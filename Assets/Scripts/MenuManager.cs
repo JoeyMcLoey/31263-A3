@@ -6,7 +6,11 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     public void LoadLevel1(){
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level1Scene");
+    }
+
+    public void ExitGame(){
+        SceneManager.LoadScene("StartScene");
     }
     
     // Start is called before the first frame update

@@ -51,10 +51,13 @@ public class PacStudentController : MonoBehaviour
         // Calculate new target position based on lastInput
         Vector3Int targetPosition = gridPosition + new Vector3Int(lastInput.x, lastInput.y, 0);
 
+        bool isMoving = false;
+
         // If lastInput direction is walkable, move PacStudent
         if (IsTileWalkable(targetPosition))
         {
             currentInput = lastInput;
+            isMoving = true;
             StartCoroutine(LerpPosition(targetPosition));
         }
         else
@@ -63,15 +66,23 @@ public class PacStudentController : MonoBehaviour
             targetPosition = gridPosition + new Vector3Int(currentInput.x, currentInput.y, 0);
             if (IsTileWalkable(targetPosition))
             {
+                isMoving = true;
                 StartCoroutine(LerpPosition(targetPosition));
             }
         }
+
+        // Update the animation based on movement direction
+        UpdatePacStudentAnimationDirection(isMoving);
+
+        // Notify AudioManager whether PacStudent is moving or not
+        audioManager.HandlePacStudentMovementAudio(isMoving);
     }
 
     bool IsTileWalkable(Vector3Int position)
     {
+        // Check if the tile is walkable (not non-walkable) by checking if it's null
         TileBase nonWalkableTile = nonWalkableTilemap.GetTile(position);
-        return nonWalkableTile == null;
+        return nonWalkableTile == null; // Walkable if the tile is null
     }
 
     IEnumerator LerpPosition(Vector3Int targetPosition)
@@ -83,12 +94,6 @@ public class PacStudentController : MonoBehaviour
         float elapsedTime = 0f;
         float totalTime = 1f / moveSpeed;
 
-        // Notify AudioManager that PacStudent is moving
-        audioManager.HandlePacStudentMovementAudio(true);
-
-        // Update animation based on direction
-        UpdatePacStudentAnimationDirection(targetPosition);
-
         while (elapsedTime < totalTime)
         {
             transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / totalTime);
@@ -99,15 +104,6 @@ public class PacStudentController : MonoBehaviour
         SnapToGrid(targetPosition);
         gridPosition = targetPosition;
         isLerping = false;
-
-        if (!HasPendingInput())
-        {
-            // Notify AudioManager that PacStudent has stopped
-            audioManager.HandlePacStudentMovementAudio(false);
-        }
-
-        // Check for pellet collision
-        CheckForPelletCollision();
     }
 
     void SnapToGrid(Vector3Int gridPosition)
@@ -116,32 +112,29 @@ public class PacStudentController : MonoBehaviour
         transform.position = worldPosition;
     }
 
-    void CheckForPelletCollision()
+    // Handle collision with pellets
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        TileBase tile = nonWalkableTilemap.GetTile(gridPosition);
-
-        // If PacStudent is on a "Walkable" tile (pellet), play the pellet-eating sound
-        if (tile != null && nonWalkableTilemap.CompareTag("Walkable"))
+        if (collision.gameObject.CompareTag("Pellet")) // Ensure the pellet has the "Pellet" tag
         {
+            // Play the pellet-eating sound
             audioManager.PlayPelletEatingSound();
+
+            // Destroy the pellet on collision
+            Destroy(collision.gameObject);
         }
     }
 
-    void UpdatePacStudentAnimationDirection(Vector3Int targetPosition)
+    void UpdatePacStudentAnimationDirection(bool isMoving)
     {
-        // Update animator parameters based on movement direction
-        Vector3 direction = (nonWalkableTilemap.GetCellCenterWorld(targetPosition) - transform.position).normalized;
-
         if (pacStudentAnimator != null)
         {
-            pacStudentAnimator.SetFloat("MoveX", direction.x);
-            pacStudentAnimator.SetFloat("MoveY", direction.y);
-            pacStudentAnimator.SetBool("isMoving", true);
-        }
-    }
+            // Set the direction parameters for the animator based on currentInput
+            pacStudentAnimator.SetFloat("MoveX", currentInput.x);
+            pacStudentAnimator.SetFloat("MoveY", currentInput.y);
 
-    bool HasPendingInput()
-    {
-        return lastInput != Vector2Int.zero || currentInput != Vector2Int.zero;
+            // Set the isMoving parameter to control animation
+            pacStudentAnimator.SetBool("isMoving", isMoving);
+        }
     }
 }

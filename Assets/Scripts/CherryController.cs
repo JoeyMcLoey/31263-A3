@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CherryController : MonoBehaviour
@@ -33,8 +33,9 @@ public class CherryController : MonoBehaviour
 
     private Vector3 GetRandomOffScreenPosition()
     {
-        float x = Random.Range(-levelBounds.x, levelBounds.x);
-        float y = Random.Range(-levelBounds.y, levelBounds.y);
+        // Random position outside the camera view (just outside the boundaries)
+        float x = Random.Range(-levelBounds.x * 1.5f, levelBounds.x * 1.5f);
+        float y = Random.Range(-levelBounds.y * 1.5f, levelBounds.y * 1.5f);
         return new Vector3(x, y, 0);
     }
 
@@ -50,7 +51,7 @@ public class CherryController : MonoBehaviour
             yield return null;
         }
 
-        // Destroy the cherry once it goes off-screen on the other side
+        // Destroy the cherry once it reaches the other side of the level
         Destroy(cherry);
     }
 }

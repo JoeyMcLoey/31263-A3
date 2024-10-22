@@ -29,7 +29,7 @@ public class LevelLayout : MonoBehaviour
         if (position.x < 0 || position.y < 0 || position.x >= levelMap.GetLength(1) || position.y >= levelMap.GetLength(0))
             return false; // Out of bounds
 
-        return levelMap[position.y, position.x] == 5 || levelMap[position.y, position.x] == 0; // Assuming 5 and 0 represent walkable tiles
+        return levelMap[position.y, position.x] == 5 || levelMap[position.y, position.x] == 0;
     }
 
     // Start is called before the first frame update

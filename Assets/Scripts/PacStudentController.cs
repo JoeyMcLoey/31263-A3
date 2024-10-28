@@ -11,7 +11,6 @@ public class PacStudentController : MonoBehaviour
     private Vector2Int currentInput;
     private bool isLerping = false;
     private Tilemap nonWalkableTilemap;
-
     private AudioManager audioManager;
     public Animator pacStudentAnimator;
 
@@ -22,7 +21,6 @@ public class PacStudentController : MonoBehaviour
         SnapToGrid(gridPosition);
         lastInput = Vector2Int.zero;
         currentInput = Vector2Int.zero;
-
         audioManager = FindFirstObjectByType<AudioManager>();
     }
 

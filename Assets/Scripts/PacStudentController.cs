@@ -13,6 +13,7 @@ public class PacStudentController : MonoBehaviour
     private Tilemap nonWalkableTilemap;
     private AudioManager audioManager;
     public Animator pacStudentAnimator;
+    public ParticleSystem dustParticle;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class PacStudentController : MonoBehaviour
         lastInput = Vector2Int.zero;
         currentInput = Vector2Int.zero;
         audioManager = FindFirstObjectByType<AudioManager>();
+        dustParticle.Stop();
     }
 
     void Update()
@@ -59,6 +61,13 @@ public class PacStudentController : MonoBehaviour
 
         UpdatePacStudentAnimationDirection(isMoving);
         audioManager.HandlePacStudentMovementAudio(isMoving);
+
+        if (isMoving && !dustParticle.isPlaying){
+            dustParticle.Play();
+        }
+        else if (!isMoving && dustParticle.isPlaying){
+            dustParticle.Stop();
+        }
     }
 
     bool IsTileWalkable(Vector3Int position){

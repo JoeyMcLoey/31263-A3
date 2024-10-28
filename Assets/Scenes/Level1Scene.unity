@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 48299630}
   m_Layer: 0
   m_Name: PacStudent
-  m_TagString: Untagged
+  m_TagString: PacStudent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1795,7 +1795,7 @@ Transform:
   m_GameObject: {fileID: 738826807}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 358.56174, y: 201.67648, z: 2.6027997}
+  m_LocalPosition: {x: 358.56174, y: 201.67648, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1815,7 +1815,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cherryPrefab: {fileID: 6021376769718756735, guid: 04b2627e8b91c144583c3c57fcecf7d9, type: 3}
   spawnInterval: 10
-  moveSpeed: 3
+  moveSpeed: 10
+  levelTilemap: {fileID: 1783157100}
+  cherryScale: 15
 --- !u!1 &767637391
 GameObject:
   m_ObjectHideFlags: 0

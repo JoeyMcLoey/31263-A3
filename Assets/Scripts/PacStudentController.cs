@@ -104,6 +104,10 @@ public class PacStudentController : MonoBehaviour
             audioManager.PlayPelletEatingSound();
             Destroy(collision.gameObject);
         }
+
+        if (collision.gameObject.CompareTag("Cherry")){
+            Destroy(collision.gameObject);
+        }
     }
 
     void UpdatePacStudentAnimationDirection(bool isMoving){

@@ -1,57 +1,93 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class CherryController : MonoBehaviour
 {
-    public GameObject cherryPrefab;  // Reference to the cherry prefab
-    public float spawnInterval = 10f;  // Spawn interval for cherries
-    public float moveSpeed = 3f;  // Speed at which cherry moves
-    private Vector2Int levelBounds;  // Level bounds for cherry spawning and movement
+    public GameObject cherryPrefab; 
+    public float spawnInterval = 10f; 
+    public float moveSpeed = 10f; 
+    public Tilemap nonWalkableTilemap; 
+    public float cherryScale = 15f; 
+
+    private Vector3 mapCenter;
+    private BoundsInt tilemapBounds;
 
     private void Start()
     {
-        levelBounds = new Vector2Int(10, 10);  // Set level bounds based on your map size
+        tilemapBounds = nonWalkableTilemap.cellBounds;
+        mapCenter = GetMapCenter(); 
         StartCoroutine(SpawnCherry());
     }
 
-    private IEnumerator SpawnCherry()
-    {
-        while (true)
-        {
+    private IEnumerator SpawnCherry(){
+        while (true){
             yield return new WaitForSeconds(spawnInterval);
 
-            // Spawn cherry at a random position outside the camera view
-            Vector3 spawnPosition = GetRandomOffScreenPosition();
+            Vector3 spawnPosition = GetRandomOffTilemapPosition();
             GameObject cherry = Instantiate(cherryPrefab, spawnPosition, Quaternion.identity);
-
-            // Move the cherry towards the center of the level
-            Vector3 targetPosition = Vector3.zero;  // Center of the level
+            cherry.transform.localScale = new Vector3(cherryScale, cherryScale, 1);
+            Vector3 targetPosition = GetOppositePositionThroughCenter(spawnPosition);
             StartCoroutine(MoveCherry(cherry, targetPosition));
         }
     }
 
-    private Vector3 GetRandomOffScreenPosition()
-    {
-        // Random position outside the camera view (just outside the boundaries)
-        float x = Random.Range(-levelBounds.x * 1.5f, levelBounds.x * 1.5f);
-        float y = Random.Range(-levelBounds.y * 1.5f, levelBounds.y * 1.5f);
-        return new Vector3(x, y, 0);
+    private Vector3 GetMapCenter(){
+        Vector3Int centerGrid = new Vector3Int(
+            (tilemapBounds.xMin + tilemapBounds.xMax) / 2,
+            (tilemapBounds.yMin + tilemapBounds.yMax) / 2,
+            0
+        );
+        return nonWalkableTilemap.GetCellCenterWorld(centerGrid);
     }
 
-    private IEnumerator MoveCherry(GameObject cherry, Vector3 targetPosition)
-    {
-        Vector3 startPosition = cherry.transform.position;
-        float lerpTime = 0f;
+    private Vector3 GetRandomOffTilemapPosition(){
+        float spawnX, spawnY;
+        int side = Random.Range(0, 4);
 
-        while (lerpTime < 1f)
-        {
-            lerpTime += Time.deltaTime * moveSpeed;
-            cherry.transform.position = Vector3.Lerp(startPosition, targetPosition, lerpTime);
-            yield return null;
+        switch (side){
+            case 0: 
+                spawnX = tilemapBounds.xMin - 5f;
+                spawnY = Random.Range(tilemapBounds.yMin, tilemapBounds.yMax);
+                break;
+            case 1:  
+                spawnX = tilemapBounds.xMax + 5f;
+                spawnY = Random.Range(tilemapBounds.yMin, tilemapBounds.yMax);
+                break;
+            case 2: 
+                spawnX = Random.Range(tilemapBounds.xMin, tilemapBounds.xMax);
+                spawnY = tilemapBounds.yMax + 5f;
+                break;
+            default: 
+                spawnX = Random.Range(tilemapBounds.xMin, tilemapBounds.xMax);
+                spawnY = tilemapBounds.yMin - 5f;
+                break;
         }
 
-        // Destroy the cherry once it reaches the other side of the level
+        return new Vector3(spawnX, spawnY, 0);
+    }
+
+    private Vector3 GetOppositePositionThroughCenter(Vector3 spawnPosition){
+        Vector3 directionToCenter = (mapCenter - spawnPosition).normalized;
+        Vector3 oppositePosition = mapCenter + directionToCenter * tilemapBounds.size.magnitude * 2;
+        return oppositePosition;
+    }
+
+    private IEnumerator MoveCherry(GameObject cherry, Vector3 targetPosition){
+        Vector3 startPosition = cherry.transform.position;
+        float distance = Vector3.Distance(startPosition, targetPosition);
+        float totalTime = distance / moveSpeed;
+
+        float elapsedTime = 0f;
+        while (elapsedTime < totalTime){
+            if (cherry == null){
+                yield break;
+            }
+            cherry.transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / totalTime);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
         Destroy(cherry);
     }
 }

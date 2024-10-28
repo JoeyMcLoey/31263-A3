@@ -52,12 +52,12 @@ public class CherryController : MonoBehaviour
                 spawnY = Random.Range(tilemapBounds.yMin, tilemapBounds.yMax);
                 break;
             case 1:  
-                spawnX = tilemapBounds.xMax + 5f;
+                spawnX = tilemapBounds.xMax + 520f;
                 spawnY = Random.Range(tilemapBounds.yMin, tilemapBounds.yMax);
                 break;
             case 2: 
                 spawnX = Random.Range(tilemapBounds.xMin, tilemapBounds.xMax);
-                spawnY = tilemapBounds.yMax + 5f;
+                spawnY = tilemapBounds.yMax + 400f;
                 break;
             default: 
                 spawnX = Random.Range(tilemapBounds.xMin, tilemapBounds.xMax);
@@ -70,7 +70,7 @@ public class CherryController : MonoBehaviour
 
     private Vector3 GetOppositePositionThroughCenter(Vector3 spawnPosition){
         Vector3 directionToCenter = (mapCenter - spawnPosition).normalized;
-        Vector3 oppositePosition = mapCenter + directionToCenter * tilemapBounds.size.magnitude * 2;
+        Vector3 oppositePosition = mapCenter + directionToCenter * tilemapBounds.size.magnitude * 5;
         return oppositePosition;
     }
 

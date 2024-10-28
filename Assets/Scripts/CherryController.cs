@@ -7,7 +7,7 @@ public class CherryController : MonoBehaviour
 {
     public GameObject cherryPrefab; 
     public float spawnInterval = 10f; 
-    public float moveSpeed = 10f; 
+    public float moveSpeed = 20f; 
     public Tilemap nonWalkableTilemap; 
     public float cherryScale = 15f; 
 
@@ -70,7 +70,7 @@ public class CherryController : MonoBehaviour
 
     private Vector3 GetOppositePositionThroughCenter(Vector3 spawnPosition){
         Vector3 directionToCenter = (mapCenter - spawnPosition).normalized;
-        Vector3 oppositePosition = mapCenter + directionToCenter * tilemapBounds.size.magnitude * 5;
+        Vector3 oppositePosition = mapCenter + directionToCenter * tilemapBounds.size.magnitude * 9;
         return oppositePosition;
     }
 

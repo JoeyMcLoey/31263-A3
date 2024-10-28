@@ -1781,7 +1781,7 @@ GameObject:
   - component: {fileID: 738826809}
   m_Layer: 0
   m_Name: CherryManager
-  m_TagString: Untagged
+  m_TagString: Pellet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1815,8 +1815,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cherryPrefab: {fileID: 6021376769718756735, guid: 04b2627e8b91c144583c3c57fcecf7d9, type: 3}
   spawnInterval: 10
-  moveSpeed: 10
-  levelTilemap: {fileID: 1783157100}
+  moveSpeed: 35
+  nonWalkableTilemap: {fileID: 1783157100}
   cherryScale: 15
 --- !u!1 &767637391
 GameObject:

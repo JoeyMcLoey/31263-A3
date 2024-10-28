@@ -108,6 +108,10 @@ public class PacStudentController : MonoBehaviour
         if (collision.gameObject.CompareTag("Cherry")){
             Destroy(collision.gameObject);
         }
+
+        if (collision.gameObject.CompareTag("PowerPellet")){
+            Destroy(collision.gameObject);
+        }
     }
 
     void UpdatePacStudentAnimationDirection(bool isMoving){

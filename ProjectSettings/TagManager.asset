@@ -8,6 +8,8 @@ TagManager:
   - NonWalkable
   - Pellet
   - PacStudent
+  - Cherry
+  - PowerPellet
   layers:
   - Default
   - TransparentFX

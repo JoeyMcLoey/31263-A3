@@ -14,6 +14,7 @@ public class PacStudentController : MonoBehaviour
     private AudioManager audioManager;
     public Animator pacStudentAnimator;
     public ParticleSystem dustParticle;
+    public ScoreManager scoreManager;
 
     void Start()
     {
@@ -24,6 +25,10 @@ public class PacStudentController : MonoBehaviour
         currentInput = Vector2Int.zero;
         audioManager = FindFirstObjectByType<AudioManager>();
         dustParticle.Stop();
+
+        if (scoreManager == null){
+            scoreManager = FindFirstObjectByType<ScoreManager>();
+        }
     }
 
     void Update()
@@ -103,10 +108,12 @@ public class PacStudentController : MonoBehaviour
         if (collision.gameObject.CompareTag("Pellet")){
             audioManager.PlayPelletEatingSound();
             Destroy(collision.gameObject);
+            scoreManager.addPoints(10);
         }
 
         if (collision.gameObject.CompareTag("Cherry")){
             Destroy(collision.gameObject);
+            scoreManager.addPoints(100);
         }
 
         if (collision.gameObject.CompareTag("PowerPellet")){

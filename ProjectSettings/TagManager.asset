@@ -10,6 +10,7 @@ TagManager:
   - PacStudent
   - Cherry
   - PowerPellet
+  - Teleporter
   layers:
   - Default
   - TransparentFX

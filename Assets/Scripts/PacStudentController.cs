@@ -11,7 +11,7 @@ public class PacStudentController : MonoBehaviour
     private Vector2Int currentInput;
     private bool isLerping = false;
     private Tilemap nonWalkableTilemap;
-    private AudioManager audioManager;
+    public AudioManager audioManager;
     public Animator pacStudentAnimator;
     public ParticleSystem dustParticle;
     public ScoreManager scoreManager;

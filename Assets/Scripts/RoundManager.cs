@@ -10,6 +10,7 @@ public class RoundManager : MonoBehaviour
     public PacStudentController pacStudent; 
     public AudioClip walkingStateMusic;     
     public AudioManager audioManager;       
+    public TimeManager timeManager;
 
     private void Start(){
         StartCoroutine(StartRoundCountdown());
@@ -25,7 +26,8 @@ public class RoundManager : MonoBehaviour
         }
         countdownText.text = "GO!";
         yield return new WaitForSeconds(1f);  
-        countdownText.gameObject.SetActive(false); 
+        countdownText.gameObject.SetActive(false);
+        timeManager.StartTimer();
 
         pacStudent.enabled = true;
         audioManager.PlayWalkingSound();

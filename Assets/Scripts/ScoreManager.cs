@@ -47,4 +47,8 @@ public class ScoreManager : MonoBehaviour
     private void SaveHighScore(){
         PlayerPrefs.SetInt("HighScore", highScore);
     }
+
+    public int GetScore(){
+        return score;
+    }
 }

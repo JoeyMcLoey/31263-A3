@@ -49,4 +49,8 @@ public class TimeManager : MonoBehaviour
         float bestTime = PlayerPrefs.GetFloat("BestTime", 0f);
     }
 
+    public float GetElapsedTime(){
+        return elapsedTime;
+    }
+
 }

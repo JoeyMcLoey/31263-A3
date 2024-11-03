@@ -15,6 +15,7 @@ public class PacStudentController : MonoBehaviour
     public Animator pacStudentAnimator;
     public ParticleSystem dustParticle;
     public ScoreManager scoreManager;
+    public PelletManager pelletManager;
 
     void Start()
     {
@@ -109,6 +110,7 @@ public class PacStudentController : MonoBehaviour
             audioManager.PlayPelletEatingSound();
             Destroy(collision.gameObject);
             scoreManager.addPoints(10);
+            pelletManager.PelletEaten();
         }
 
         if (collision.gameObject.CompareTag("Cherry")){

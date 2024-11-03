@@ -6,10 +6,10 @@ public class AudioManager : MonoBehaviour
     public AudioSource sfxSource;              
     public AudioClip backgroundMusic;          
     public AudioClip walkingSound;            
-    public AudioClip pelletEatingSound;      
+    public AudioClip pelletEatingSound;   
+    public AudioClip scaredMusic;   
 
     private bool isPlayingWalkingSound = false;
-    private bool isPlayingPelletSound = false; 
 
     private void Start()
     {
@@ -20,6 +20,20 @@ public class AudioManager : MonoBehaviour
         backgroundMusicSource.clip = backgroundMusic;
         backgroundMusicSource.loop = true;
         backgroundMusicSource.Play();
+    }
+
+    private void PlayScaredMusic(){
+        if (backgroundMusicSource.clip != scaredMusic){
+            backgroundMusicSource.clip = scaredMusic;
+            backgroundMusicSource.Play();
+        }
+    }
+
+    public void PlayNormalMusic(){
+        if (backgroundMusicSource.clip != backgroundMusic){
+            backgroundMusicSource.clip = backgroundMusic;
+            backgroundMusicSource.Play();
+        }
     }
 
     public void HandlePacStudentMovementAudio(bool isMoving){
@@ -45,9 +59,5 @@ public class AudioManager : MonoBehaviour
 
     public void PlayPelletEatingSound(){
         sfxSource.PlayOneShot(pelletEatingSound);
-    }
-
-    private void ResetPelletSoundFlag(){
-        isPlayingPelletSound = false;
     }
 }

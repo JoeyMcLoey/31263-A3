@@ -837,6 +837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1791469041}
+  highScoreText: {fileID: 0}
 --- !u!4 &145000597
 Transform:
   m_ObjectHideFlags: 0
@@ -1284,6 +1285,7 @@ MonoBehaviour:
   backgroundMusic: {fileID: 8300000, guid: 85ff212daa986b4439f6035a32a7fa1e, type: 3}
   walkingSound: {fileID: 8300000, guid: 419111b65fee25c47ad1f0dcb0b6183d, type: 3}
   pelletEatingSound: {fileID: 8300000, guid: d1912c1abb7781f4f85da83d7802609e, type: 3}
+  scaredMusic: {fileID: 0}
 --- !u!82 &368862446
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1639,6 +1641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1698760993}
+  bestTimeText: {fileID: 0}
 --- !u!4 &565452885
 Transform:
   m_ObjectHideFlags: 0
@@ -7095,7 +7098,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970737558}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d7fcb3407db24a949a0f89bede1bca9a, type: 2}
   m_CullingMode: 0
@@ -12953,7 +12956,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865955199}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 66280482bdee8424698e7247c724a9e6, type: 2}
   m_CullingMode: 0
@@ -16137,7 +16140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8042371539941187311, guid: cc5f7b8169a1d9a4e858e3c706e54dec, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16161,7 +16164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5952708251259024640, guid: 6162549a4402008419d56d955de02e4c, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8810023245154806833, guid: 6162549a4402008419d56d955de02e4c, type: 3}
       propertyPath: m_LocalScale.x

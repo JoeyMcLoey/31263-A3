@@ -11,10 +11,12 @@ public class ScoreManager : MonoBehaviour
     // public TMP_Text scoreText;
 
     private int score = 0;
+    private int highScore = 0;
     
     // Start is called before the first frame update
     void Start()
     {
+        LoadHighScore();
         updateScoreUI();
     }
 
@@ -27,9 +29,22 @@ public class ScoreManager : MonoBehaviour
     public void addPoints(int points){
         score += points;
         updateScoreUI();
+
+        if (score > highScore){
+            highScore = score;
+            SaveHighScore();
+        }
     }
 
     private void updateScoreUI(){
         scoreText.text = score.ToString();
+    }
+
+    private void LoadHighScore(){
+        highScore = PlayerPrefs.GetInt("HighScore", 0);
+    }
+
+    private void SaveHighScore(){
+        PlayerPrefs.SetInt("HighScore", highScore);
     }
 }

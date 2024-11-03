@@ -5,11 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public TimeManager timeManager;
+    
     public void LoadLevel1(){
         SceneManager.LoadScene("Level1Scene");
     }
 
     public void ExitGame(){
+        if (timeManager != null){
+            timeManager.StopTimer();
+        }
         SceneManager.LoadScene("StartScene");
     }
     

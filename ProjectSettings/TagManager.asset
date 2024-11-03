@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Walkable
+  - NonWalkable
+  - Pellet
+  - PacStudent
+  - Cherry
+  - PowerPellet
+  - Teleporter
   layers:
   - Default
   - TransparentFX
